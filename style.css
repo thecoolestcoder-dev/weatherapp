@@ -1,0 +1,84 @@
+:root{
+  --bg1: #bfe9ff;
+  --bg2: #9ed8ff;
+  --card: rgba(255,255,255,0.75);
+  --accent: #ffb86b;
+  --soft: 18px;
+  --round: 18px;
+  --glass: rgba(255,255,255,0.07);
+  --text: #06243a;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: linear-gradient(180deg,var(--bg1),var(--bg2)); color:var(--text); -webkit-font-smoothing:antialiased}
+body{display:flex;align-items:center;justify-content:center;padding:28px;}
+
+#app{
+  width:380px;
+  max-width:95vw;
+  backdrop-filter: blur(6px);
+  border-radius:24px;
+  padding:18px;
+  box-shadow:0 10px 30px rgba(10,20,30,0.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7));
+  position:relative;
+  overflow:hidden;
+  transition:all .4s ease;
+}
+
+/* top row */
+.top{display:flex;align-items:center;justify-content:space-between;padding:6px 4px 0 4px}
+.location{font-weight:700;font-size:16px}
+#refresh{background:transparent;border:0;font-size:18px;cursor:pointer;padding:6px;border-radius:8px}
+
+/* Cards */
+.card{background:var(--card);border-radius:14px;padding:12px;margin-top:12px;box-shadow:0 6px 16px rgba(10,20,30,0.06);display:flex;align-items:center}
+.current{display:flex;justify-content:space-between;align-items:center;padding:18px}
+.current .left{flex:1}
+.temp{font-size:62px;font-weight:800;line-height:0.9}
+.condition{font-size:16px;opacity:0.9;margin-top:8px}
+
+/* weather icon */
+.weather-icon{width:110px;height:110px;display:flex;align-items:center;justify-content:center;position:relative;}
+
+/* cartoon shapes */
+.sun{width:76px;height:76px;border-radius:50%;background:linear-gradient(180deg,#ffd76b,#ffb86b);box-shadow:0 10px 22px rgba(255,180,80,0.2);animation:sun-spin 12s linear infinite}
+@keyframes sun-spin{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
+
+.cloud{
+  width:90px;height:42px;border-radius:28px;background:linear-gradient(180deg,#ffffff,#e9f3ff);position:absolute;left:8px;top:50px;box-shadow:0 6px 12px rgba(0,0,0,0.06);
+}
+.cloud::before,.cloud::after{content:"";position:absolute;background:inherit;border-radius:50%}
+.cloud::before{width:46px;height:46px;left:-22px;top:-20px}
+.cloud::after{width:56px;height:56px;left:30px;top:-28px}
+.rain{position:absolute;left:46px;top:88px;width:2px;height:16px;background:linear-gradient(180deg,#8ec4ff,#4091ff);border-radius:2px;animation:rain-fall .9s linear infinite}
+@keyframes rain-fall{0%{transform:translateY(-6px);opacity:0}50%{opacity:1}100%{transform:translateY(6px);opacity:0}}
+
+/* hourly */
+.hourly{flex-direction:column;padding:12px 12px}
+.hourly h3{margin:0 0 8px 0}
+.hourly-list{display:flex;gap:8px;overflow:auto;padding-bottom:6px}
+.hourly-item{min-width:56px;background:var(--glass);border-radius:10px;padding:8px;text-align:center;font-size:13px}
+.hourly-item .hour{font-size:12px;margin-bottom:6px;opacity:0.9}
+
+/* tomorrow */
+.tomorrow{display:flex;justify-content:space-between;align-items:center;padding:12px}
+.tomorrow-left h3{margin:0}
+.tomorrow-left .pred{font-weight:700;margin-top:8px}
+.tomorrow-right{font-size:14px;color:rgba(0,0,0,0.6)}
+
+/* footer */
+.note{font-size:12px;margin-top:10px;opacity:0.8;text-align:center}
+
+/* weather background moods (apply to #app as class) */
+#app.sunny{background:linear-gradient(180deg,#fff7e6,#fff0d9)}
+#app.cloudy{background:linear-gradient(180deg,#eaf3ff,#dfefff)}
+#app.rainy{background:linear-gradient(180deg,#d6e6ff,#cfe6ff)}
+#app.stormy{background:linear-gradient(180deg,#d9d9e6,#cfcfe0)}
+#app.night{background:linear-gradient(180deg,#0f1a2b,#16283b);color:#eaf4ff}
+
+/* smaller screens */
+@media (max-width:420px){
+  .temp{font-size:50px}
+  .weather-icon{width:84px;height:84px}
+}
