@@ -1,0 +1,113 @@
+/* ===== CARTOON THEME COLORS ===== */
+:root {
+  --sky: linear-gradient(to bottom, #8ed6ff, #53a4ff);
+  --card: #ffffffcc;
+  --title: #ffde59;
+  --text-dark: #234;
+  --accent: #ff8a5b;
+  --accent-dark: #ff6d36;
+}
+
+/* ===== PAGE LAYOUT ===== */
+body {
+  font-family: "Comic Sans MS", "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--sky);
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+/* ===== TITLE ===== */
+h1 {
+  color: var(--title);
+  text-shadow: 3px 3px 0 #444;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+/* ===== INPUT + BUTTON ===== */
+#cityInput {
+  width: 65%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 3px solid #fff;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+}
+
+#searchBtn {
+  padding: 12px 18px;
+  font-size: 16px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: bold;
+  margin-left: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0px 4px 0px var(--accent-dark);
+}
+
+#searchBtn:active {
+  transform: translateY(2px);
+  box-shadow: 0px 2px 0px var(--accent-dark);
+}
+
+/* ===== WEATHER SECTIONS ===== */
+#current, #hourly, #daily {
+  margin-top: 20px;
+  background: white;
+  padding: 18px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+  color: var(--text-dark);
+}
+
+/* ===== HOURLY (SCROLLING) ===== */
+.hour-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding-bottom: 10px;
+}
+
+.hour-item {
+  min-width: 120px;
+  background: #ffdca8;
+  padding: 12px;
+  border-radius: 14px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  text-align: center;
+  border: 2px solid #ffc57f;
+}
+
+/* ===== DAILY FORECAST ===== */
+.day-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.day-item {
+  background: #a8e4ff;
+  padding: 14px;
+  border-radius: 14px;
+  border: 2px solid #78d3ff;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+}
