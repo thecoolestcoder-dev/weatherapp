@@ -1,3 +1,5 @@
+/* ===== CARTOON THEME COLORS ===== */
+:root {
 -sky: linear-gradient(to bottom, #8ed6ff, #53a4ff);
   --card: #ffffffcc;
   --title: #ffde59;
@@ -117,3 +119,4 @@ h1 {
   border: 2px solid #78d3ff;
   box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
 }
+
