@@ -1,11 +1,11 @@
-/* ===== CARTOON THEME COLORS ===== */
+/* ===== BRIGHT CARTOON COLORS ===== */
 :root {
-  --sky: linear-gradient(to bottom, #8ed6ff, #53a4ff);
-  --card: #0077ff;
-  --title: #ffde59;
-  --text-dark: #234;
-  --accent: #ff8a5b;
-  --accent-dark: #ff6d36;
+  --sky: linear-gradient(to bottom, #4db8ff, #0079ff); /* bright sky blue */
+  --card: #ffffff;
+  --title: #ffeb3b;       /* bright yellow */
+  --text-dark: #102030;
+  --accent: #ff5722;      /* neon orange */
+  --accent-dark: #c43e00;
 }
 
 /* ===== PAGE LAYOUT ===== */
@@ -20,34 +20,35 @@ body {
   padding-top: 40px;
 }
 
-/* ===== MAIN CONTAINER ===== */
+/* ===== MAIN CONTAINER (CARTOON BUBBLE) ===== */
 .container {
   background: var(--card);
   padding: 30px;
   width: 90%;
   max-width: 500px;
   border-radius: 25px;
-  border: 4px solid #fff;
-  box-shadow: 0px 10px 0px #2a6db0,
-              0px 15px 20px rgba(0, 0, 0, 0.3);
+  border: 5px solid var(--title);
+  box-shadow: 0px 12px 0px #005fcf,
+              0px 18px 25px rgba(0, 0, 0, 0.4);
   text-align: center;
 }
 
 /* ===== TITLE ===== */
 h1 {
   color: var(--title);
-  text-shadow: 3px 3px 0 #444;
-  font-size: 40px;
+  text-shadow: 4px 4px 0 #000;
+  font-size: 45px;
   margin-bottom: 10px;
 }
 
+/* ===== SELECTED CITY ===== */
 #selectedCity {
-  color: #ffde59;
-  font-size: 26px;
+  color: var(--title);
+  font-size: 28px;
   font-weight: bold;
   margin-top: -5px;
   margin-bottom: 15px;
-  text-shadow: 3px 3px 0 #444;
+  text-shadow: 3px 3px 0 #000;
 }
 
 /* ===== INPUT + BUTTON ===== */
@@ -56,45 +57,45 @@ h1 {
   padding: 12px;
   font-size: 16px;
   border-radius: 12px;
-  border: 3px solid #fff;
-  box-shadow: inset 0 0 8px rgba(0,0,0,0.15);
+  border: 4px solid #fff;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.25);
 }
 
 #searchBtn {
-  padding: 12px 20px;
-  font-size: 18px;
-  border: 3px solid #fff;
+  padding: 12px 24px;
+  font-size: 20px;
+  border: 4px solid #fff;
   background: var(--accent);
   color: white;
   font-weight: bold;
   margin-left: 10px;
-  border-radius: 15px;
+  border-radius: 16px;
   cursor: pointer;
   transition: 0.2s;
-  box-shadow: 0px 5px 0px var(--accent-dark);
+  box-shadow: 0px 6px 0px var(--accent-dark);
 }
 
 #searchBtn:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
 #searchBtn:active {
-  transform: translateY(3px);
+  transform: translateY(4px);
   box-shadow: 0px 2px 0px var(--accent-dark);
 }
 
 /* ===== WEATHER SECTIONS ===== */
 #current, #hourly, #daily {
   margin-top: 20px;
-  background: #ffffffeb;
+  background: #ffffff;
   padding: 20px;
   border-radius: 18px;
-  border: 3px solid #fff;
-  box-shadow: 0px 6px 0px #b9d8ff;
+  border: 4px solid var(--title);
+  box-shadow: 0px 8px 0px #005fcf;
   color: var(--text-dark);
 }
 
-/* ===== HOURLY (SCROLLING) ===== */
+/* ===== HOURLY FORECAST ===== */
 .hour-list {
   display: flex;
   overflow-x: auto;
@@ -104,17 +105,17 @@ h1 {
 
 .hour-item {
   min-width: 130px;
-  background: #ffdca8;
-  padding: 14px;
+  background: #ffb74d;
+  padding: 18px;
   border-radius: 18px;
-  border: 3px solid #ffc57f;
-  box-shadow: 0px 5px 0px #d39a52;
+  border: 4px solid #ff9800;
+  box-shadow: 0px 6px 0px #cc7a00;
   text-align: center;
   transition: 0.2s;
 }
 
 .hour-item:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
 }
 
 /* ===== DAILY FORECAST ===== */
@@ -125,16 +126,15 @@ h1 {
 }
 
 .day-item {
-  background: #a8e4ff;
-  padding: 16px;
+  background: #4fc3f7;
+  padding: 18px;
   border-radius: 18px;
-  border: 3px solid #78d3ff;
-  box-shadow: 0px 5px 0px #5badcf;
+  border: 4px solid #03a9f4;
+  box-shadow: 0px 6px 0px #007ac1;
   text-align: center;
   transition: 0.2s;
 }
 
 .day-item:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
 }
-
