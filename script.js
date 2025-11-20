@@ -112,8 +112,3 @@ function showDaily(list) {
   html += "</div>";
   box.innerHTML = html;
 }
-
-  html += "</div>";
-  box.innerHTML = html;
-}
-
