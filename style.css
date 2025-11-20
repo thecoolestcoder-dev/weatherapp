@@ -1,7 +1,7 @@
 /* ===== CARTOON THEME COLORS ===== */
 :root {
   --sky: linear-gradient(to bottom, #8ed6ff, #53a4ff);
-  --card: #ffffffcc;
+  --card: #0077ff;
   --title: #ffde59;
   --text-dark: #234;
   --accent: #ff8a5b;
@@ -137,3 +137,4 @@ h1 {
 .day-item:hover {
   transform: translateY(-4px);
 }
+
