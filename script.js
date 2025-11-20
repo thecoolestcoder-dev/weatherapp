@@ -6,6 +6,7 @@ const API_KEY = "a4e184b02ddaff01c5062dc8b049b077";
 button.addEventListener("click", () => {
   const city = input.value.trim();
   if(city !== "") {
+document.getElementById("selectedCity").textContent = city
     getWeather(city);
   }
 });
@@ -111,3 +112,8 @@ function showDaily(list) {
   html += "</div>";
   box.innerHTML = html;
 }
+
+  html += "</div>";
+  box.innerHTML = html;
+}
+
