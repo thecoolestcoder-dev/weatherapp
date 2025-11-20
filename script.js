@@ -4,12 +4,36 @@ const button = document.getElementById("searchBtn");
 const API_KEY = "a4e184b02ddaff01c5062dc8b049b077";
 
 button.addEventListener("click", () => {
-  const city = input.value.trim();
-  if(city !== "") {
-document.getElementById("selectedCity").textContent = city
-    getWeather(city);
+  const value = input.value.trim();
+
+  if (value === "") return;
+
+  // If the user typed numbers → assume ZIP code
+  if (/^\d+$/.test(value)) {
+    getCityFromZip(value);
+  } else {
+    document.getElementById("selectedCity").textContent = value;
+    getWeather(value);
   }
 });
+function getCityFromZip(zip) {
+  const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${API_KEY}&units=imperial`;
+
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      if (data.cod !== 200) {
+        alert("ZIP code not found!");
+        return;
+      }
+
+      const cityName = data.name; // city from API
+
+      document.getElementById("selectedCity").textContent = cityName;
+      getWeather(cityName);
+    });
+}
+
 
 // -------------------- MAIN WEATHER FUNCTION --------------------
 function getWeather(city) {
@@ -112,3 +136,4 @@ function showDaily(list) {
   html += "</div>";
   box.innerHTML = html;
 }
+
