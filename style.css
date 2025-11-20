@@ -1,6 +1,4 @@
-/* ===== CARTOON THEME COLORS ===== */
-:root {
-  --sky: linear-gradient(to bottom, #8ed6ff, #53a4ff);
+-sky: linear-gradient(to bottom, #8ed6ff, #53a4ff);
   --card: #ffffffcc;
   --title: #ffde59;
   --text-dark: #234;
@@ -38,6 +36,14 @@ h1 {
   text-shadow: 3px 3px 0 #444;
   font-size: 36px;
   margin-bottom: 15px;
+}
+ #selectedCity {
+  color: #ffde59;
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 0 #444;
 }
 
 /* ===== INPUT + BUTTON ===== */
